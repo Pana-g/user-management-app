@@ -1,0 +1,105 @@
+.card {
+    border: 1px solid var(--dark-border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Remove margin since gap will handle spacing */
+    display: flex;
+    gap: 20px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  
+
+  .divider {
+    border-left: 1px solid var(--dark-divider-color);
+    margin: 0 20px;
+    height: 80px;
+}
+  
+  @media (max-width: 768px) {
+    .card {
+      flex-direction: column;
+      align-items: center;
+      
+    }
+  
+    .divider {
+      border-left: none;
+      border-top: 1px solid var(--dark-divider-color);
+      margin: 20px 0;
+      width: 80%;
+      height: 0;
+    }
+  }
+
+
+  .shimmer-text-big {
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .shimmer-text-big::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-image: var(--dark-shimmer-background);
+    background-size: 200% 100%;
+    animation: shimmerAnimation 2s infinite;
+  }
+
+  .shimmer-text {
+    position: relative;
+    height: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+    .shimmer-text::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        background-image: var(--dark-shimmer-background);
+        background-size: 200% 100%;
+        animation: shimmerAnimation 2s infinite;
+    }
+
+  .shimmer-avatar {
+    position: relative;
+    border-radius: 50%;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+  }
+  .shimmer-avatar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-image: var(--dark-shimmer-background);
+    background-size: 200% 100%;
+    animation: shimmerAnimation 2s infinite;
+  }
+
+   @keyframes shimmerAnimation {
+    0% {
+    background-position: -100% 0;
+    }
+    100% {
+    background-position: 100% 0;
+    }
+   }

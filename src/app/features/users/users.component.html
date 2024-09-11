@@ -1,0 +1,19 @@
+<div class="cards-container">
+    @if(loading) {
+      <app-shimmer-card *ngFor="let item of [].constructor(10)" ></app-shimmer-card>
+    } @else {
+      @if(users.length == 0){
+        <div class="empty">
+          <img src="../../assets/no_users.png" alt="no users" class="no-users-img">
+          <h2>No users found</h2>
+        </div>
+      } @else {
+        <div style="display: flex; align-items: center; margin: 10px 10px 10px 0; gap: 20px">
+          <p>Last updated: {{ lastUpdated | date: 'medium' }}</p>
+          <button (click)="refreshUsers()">Refresh</button>
+        </div>
+  
+        <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
+      }
+    }
+    </div>

@@ -1,27 +1,117 @@
-# UserManagement
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+# User Directory Application
 
-## Development server
+## Objective
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This Angular application allows users to browse a list of users and view their details.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Home Page:**
+   - Displays a list of users fetched from the [Random User API](https://randomuser.me/api/?results=10).
+   - Each user card shows their name, email, thumbnail avatar, and other relevant information.
 
-## Build
+2. **User Details Page:**
+   - Clicking on a user navigates to a details page that displays additional user details, including their name, email, phone number, and a full-size avatar.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Search:**
+   - A search bar on the home page allows filtering users by name or email.
+   - The search input is debounced to prevent excessive API calls or filtering actions.
+   - Displays a "No results" message if no users match the search criteria.
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Follow these instructions to get the application up and running on your local machine.
 
-## Running end-to-end tests
+### Prerequisites
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Node.js v18 and npm v10 installed. You can download it from [nodejs.org](https://nodejs.org/).
+- Angular CLI installed globally. You can install it using the following command:
+  ```bash
+  npm install -g @angular/cli
+  ```
 
-## Further help
+### Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Pana-g/user-management-app.git
+   cd user-management-app
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the application:**
+   ```bash
+   ng serve
+   ```
+   The application will be running on `http://localhost:4200/`.
+
+## Usage
+
+- Visit the home page to view a list of users.
+- Click on any user to navigate to their details page.
+- Use the search bar to filter users by name or email.
+
+## Technical Details
+
+- The application is built with Angular 18.
+- It uses Angular Router for navigation between the home page and the user details page.
+- HTTP requests are managed using Angular's HttpClientModule.
+- Search functionality is implemented with reactive forms, using RxJS operators like debounceTime for debouncing the input.
+
+## API
+
+- The application fetches user data from the [Random User API](https://randomuser.me/api/?results=10).
+
+## Project Structure
+
+```
+└── 📁src
+    └── 📁app
+        └── 📁components
+            └── 📁search-box
+                └── search-box.component.css
+                └── search-box.component.html
+                └── search-box.component.ts
+            └── 📁shimmer-card
+                └── shimmer-card.component.css
+                └── shimmer-card.component.html
+                └── shimmer-card.component.ts
+            └── 📁user-card
+                └── user-card.component.css
+                └── user-card.component.html
+                └── user-card.component.ts
+        └── 📁core
+            └── 📁models
+                └── user.ts
+            └── 📁services
+                └── api.service.ts
+                └── data.service.ts
+        └── 📁features
+            └── 📁user-details
+                └── user-details.component.css
+                └── user-details.component.html
+                └── user-details.component.ts
+            └── 📁users
+                └── users.component.css
+                └── users.component.html
+                └── users.component.ts
+        └── app.component.css
+        └── app.component.html
+        └── app.component.ts
+        └── app.config.ts
+        └── app.routes.ts
+    └── 📁assets
+        └── favicon.ico
+        └── logo.png
+        └── no_users.png
+    └── index.html
+    └── main.ts
+    └── styles.css
+```
+
+For any questions or suggestions, please contact [panageo94@gmail.com](mailto:panageo94@gmail.com).
