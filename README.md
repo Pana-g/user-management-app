@@ -1,5 +1,5 @@
 
-# User Directory Application
+# User Management Application
 
 ## Objective
 
