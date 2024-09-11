@@ -5,6 +5,10 @@
 
 This Angular application allows users to browse a list of users and view their details.
 
+## Demo
+
+You can try out the live demo of the app [HERE](https://pana-g.github.io/user-management-app/).
+
 ## Features
 
 1. **Home Page:**
